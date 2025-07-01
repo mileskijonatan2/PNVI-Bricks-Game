@@ -158,7 +158,6 @@ def drawBall(posX, posY):
 
 
 def generateBallPos(brick_center_x, brick_center_y, angle_refinement = False):
-    # Randomly choose one of the four paddles
     paddle_choice = random.choice(['left', 'right', 'top', 'bottom'])
     if paddle_choice == 'left':
         x = PADDLEXMARGIN + PADDLEHEIGHT + BALLRADIUS + 5
@@ -207,7 +206,7 @@ def check_bricks_collision(mainBoard, posX, posY, ball_speed_x, ball_speed_y):
                 dx = brick_center_x - posX
                 dy = brick_center_y - posY
                 angle = math.atan2(dy, dx)
-                # Add slight randomness to avoid repetitive paths
+                # random modification of the angle
                 angle += random.uniform(-5, 5) # random.uniform(0, 5)
                 ball_speed_x = BALLSPEED * math.cos(angle)
                 ball_speed_y = BALLSPEED * math.sin(angle)
@@ -368,7 +367,7 @@ def main():
                 ball_pos_x, ball_pos_y, ball_speed_x, ball_speed_y = generateBallPos(brick_center_x, brick_center_y, angle_refinement=True)
 
 
-        # Check collisions
+        # Bricks and paddle collisions check
         brick_hit, ball_speed_x, ball_speed_y = check_bricks_collision(bricksBoard, ball_pos_x, ball_pos_y,
                                                                        ball_speed_x, ball_speed_y)
         paddle_hit, ball_speed_x, ball_speed_y = check_paddles_collision(paddle_x, paddle_y, ball_pos_x,
@@ -392,7 +391,6 @@ def main():
             if isLegalState(paddle_x, paddle_y + PADDLESPEED):
                 paddle_y += PADDLESPEED
 
-        # Check game over or win conditions
         if (not paddle_hit and not isLegalBallState(ball_pos_x, ball_pos_y)) or DEADLY:
             LIVES -= 1
             DEADLY = False
