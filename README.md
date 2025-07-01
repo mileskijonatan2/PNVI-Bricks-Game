@@ -8,12 +8,16 @@ In order to start the game:
 git clone https://github.com/mileskijonatan2/PNVI-Bricks-Game.git 
 ```
 
+```
+cd PNVI-Bricks-Game
+```
+
 
 ``` 
 cd BreakOutGameProject 
 ``` 
    
-  
+Make sure to have PyGame installed and run:  
 ```
 python breakout-game.py 
 ```   
