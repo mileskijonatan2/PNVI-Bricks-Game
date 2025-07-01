@@ -4,16 +4,16 @@ This project is made in PyGame. The game is the modification of the Breakout Gam
 Video demonstrating the game [here](./video1532816739.mp4)
 
 In order to start the game:
-1.  ```
-   git clone https://github.com/mileskijonatan2/PNVI-Bricks-Game.git 
-   ```
-2.
-   ``` 
-   cd BreakOutGameProject 
-   ``` 
+ ```
+git clone https://github.com/mileskijonatan2/PNVI-Bricks-Game.git 
+```
+
+
+``` 
+cd BreakOutGameProject 
+``` 
    
   
-3.
-   ```
-   python breakout-game.py 
-   ```   
+```
+python breakout-game.py 
+```   
